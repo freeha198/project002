@@ -36,6 +36,12 @@ jobs:
     
     - name: Build react app
       run: yarn build
+      
+    - name: Surge install
+      run: npm install --global surge
+      
+    - name: deploy surge     
+      run: surge ./build project002-freeha.surge.sh --token ${{secrets.surge_token}}
      
         
         echo Add other actions to build,
